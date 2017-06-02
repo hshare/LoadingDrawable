@@ -10,7 +10,13 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import app.dinus.com.example.R;
+import app.dinus.com.loadingdrawable.render.circle.jump.CollisionLoadingRenderer;
+import app.dinus.com.loadingdrawable.render.circle.jump.SwapLoadingRenderer;
+import app.dinus.com.loadingdrawable.render.scenery.DayNightLoadingRenderer;
+import app.dinus.com.loadingdrawable.render.shapechange.CircleBroodLoadingRenderer;
+import app.dinus.com.loadingdrawable.render.shapechange.CoolWaitLoadingRenderer;
 import razerdp.basepopup.BasePopupWindow;
+import razerdp.demo.popup.LoadingPopup;
 import razerdp.demo.popup.ScalePopup;
 
 /**
@@ -19,7 +25,8 @@ import razerdp.demo.popup.ScalePopup;
 public class ScalePopupFrag extends SimpleBaseFrag {
 
     private ScalePopup scalePopup;
-
+    private LoadingPopup loadingPopup;
+    private Button popup_show1;
 
     @Nullable
     @Override
@@ -30,14 +37,28 @@ public class ScalePopupFrag extends SimpleBaseFrag {
 
     @Override
     public void bindEvent() {
-        scalePopup=new ScalePopup(mContext);
+        scalePopup = new ScalePopup(mContext);
+
+        loadingPopup = new LoadingPopup(mContext);
         scalePopup.setOnDismissListener(new BasePopupWindow.OnDismissListener() {
             @Override
             public void onDismiss() {
-                Toast.makeText(mContext,"dismiss",Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "dismiss", Toast.LENGTH_SHORT).show();
             }
         });
-
+        loadingPopup.setOnDismissListener(new BasePopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                Toast.makeText(mContext, "dismiss", Toast.LENGTH_SHORT).show();
+            }
+        });
+        popup_show1 = (Button) mFragment.findViewById(R.id.popup_show1);
+        popup_show1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadingPopup.show();
+            }
+        });
     }
 
     @Override
