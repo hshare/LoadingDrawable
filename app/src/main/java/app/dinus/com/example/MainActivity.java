@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import razerdp.demo.DemoActivity;
+import razerdp.demo.NewDemoActivity;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.pop:
-                Intent intent = new Intent(MainActivity.this, DemoActivity.class);
+                Intent intent = new Intent(MainActivity.this, NewDemoActivity.class);
                 startActivity(intent);
                 break;
             case R.id.shape_change:
