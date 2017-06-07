@@ -8,26 +8,29 @@
         android:id="@+id/popup_anima"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_centerInParent="true"
-        android:background="@android:color/white"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp">
+        android:layout_marginRight="25dp"
+        android:background="@drawable/bg_dialog"
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="center"
-            android:textColor="#1bb25b"
-            android:textSize="18sp"
-            android:text="Title"/>
+            android:text="Title"
+            android:textColor="#f4a405"
+            android:textSize="18sp" />
 
-        <View style="@style/line_style"/>
+        <View style="@style/line_style" />
 
         <EditText
             android:id="@+id/ed_input"
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,7 +45,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:text="Cancel"
-                android:textColor="#bfbfbf"/>
+                android:textColor="#999999" />
 
             <Button
                 android:id="@+id/btn_Compelete"
@@ -51,7 +54,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:text="Compelete"
-                android:textColor="#1bb25b"/>
+                android:textColor="#f4a405" />
         </LinearLayout>
 
     </LinearLayout>
