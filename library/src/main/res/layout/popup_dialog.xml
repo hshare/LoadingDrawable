@@ -19,7 +19,7 @@
             android:gravity="left|center_vertical"
             android:paddingLeft="15dp"
             android:text="This is title"
-            android:textColor="#3dd1a5"
+            android:textColor="#b723e4"
             android:textSize="18sp" />
 
         <View
@@ -78,7 +78,7 @@
             android:gravity="center"
             android:padding="3dp"
             android:text="OK"
-            android:textColor="#3dd1a5"
+            android:textColor="#b723e4"
             android:textSize="14sp" />
 
     </RelativeLayout>
