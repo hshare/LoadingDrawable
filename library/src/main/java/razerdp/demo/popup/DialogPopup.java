@@ -24,11 +24,15 @@ public class DialogPopup extends BasePopupWindow implements View.OnClickListener
     private TextView title;
     private TextView content;
 
+    private Object showTag = "";
+
     private OnDialogPopupItemClickListener onDialogPopupItemClickListener;
 
     public DialogPopup(Activity context) {
         super(context);
 
+        title = (TextView) findViewById(R.id.title);
+        content = (TextView) findViewById(R.id.content);
         ok = (TextView) findViewById(R.id.ok);
         cancel = (TextView) findViewById(R.id.cancel);
 
@@ -75,6 +79,11 @@ public class DialogPopup extends BasePopupWindow implements View.OnClickListener
         return this;
     }
 
+    public DialogPopup setTag(Object tag) {
+        showTag = tag;
+        return this;
+    }
+
     @Override
     protected Animation initShowAnimation() {
         AnimationSet set = new AnimationSet(false);
@@ -104,11 +113,11 @@ public class DialogPopup extends BasePopupWindow implements View.OnClickListener
     @Override
     public void onClick(View v) {
         int i = v.getId();
-        if (onDialogPopupItemClickListener != null){
+        if (onDialogPopupItemClickListener != null) {
             if (i == R.id.ok) {
-                onDialogPopupItemClickListener.onLeftClick();
+                onDialogPopupItemClickListener.onLeftClick(showTag);
             } else if (i == R.id.cancel) {
-                onDialogPopupItemClickListener.onRightClick();
+                onDialogPopupItemClickListener.onRightClick(showTag);
             } else {
             }
         }
@@ -119,8 +128,8 @@ public class DialogPopup extends BasePopupWindow implements View.OnClickListener
     }
 
     public interface OnDialogPopupItemClickListener {
-        void onLeftClick();
+        void onLeftClick(Object tag);
 
-        void onRightClick();
+        void onRightClick(Object tag);
     }
 }
