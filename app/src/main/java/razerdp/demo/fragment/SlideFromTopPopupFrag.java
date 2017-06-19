@@ -92,11 +92,11 @@ public class SlideFromTopPopupFrag extends SimpleBaseFrag {
         });
         mHucareSlideFromTopPopup.setOnItemClickListener(new HucareSlideFromTopPopup.OnItemClickListener() {
             @Override
-            public void onItemClick(String clickItemString) {
+            public void onItemClick(List<String> list, int position) {
                 if ("tvPopRight".equals(mHucareSlideFromTopPopup.getTag())) {
 //                    tvPopRight.setText(clickItemString);
                 } else {
-                    ((TextView) findViewById(R.id.tvContent)).setText(clickItemString);
+                    ((TextView) findViewById(R.id.tvContent)).setText(list.get(position));
                 }
                 mHucareSlideFromTopPopup.dismiss();
             }

@@ -47,7 +47,7 @@ public class HucareSlideFromTopPopup extends BasePopupWindow {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if (onItemClickListener != null) {
-                    onItemClickListener.onItemClick(testList == null ? "" : testList.get(i));
+                    onItemClickListener.onItemClick(testList == null ? new ArrayList<String>() : testList, i);
                 }
             }
         });
@@ -58,7 +58,7 @@ public class HucareSlideFromTopPopup extends BasePopupWindow {
     }
 
     public interface OnItemClickListener {
-        void onItemClick(String clickItemString);
+        void onItemClick(List<String> list, int position);
     }
 
 
